@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 // Use Node.js runtime for nodemailer (requires Node.js modules like 'stream')
-export const runtime = 'nodejs';
+export const runtime = 'edge';
 
 // Create transporter using Gmail SMTP
 // Note: Set GMAIL_APP_PASSWORD_RONIT in your .env.local file
