@@ -1,7 +1,11 @@
+"use client"
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
+    const router = useRouter();
+  
   return (
     <div className="min-h-screen flex flex-col Poppins bg-gray-50 text-gray-800">
 
@@ -28,13 +32,15 @@ export default function AboutPage() {
               accounting — practiced daily with real businesses.
             </p>
 
-            <button className="mt-8 bg-foreground text-background hover:bg-foreground/50 transition px-6 py-3 rounded-lg font-semibold shadow-lg">
+            <button
+            onClick={() => router.push("/contact")}
+            className="mt-8 bg-foreground text-background hover:bg-foreground/50 transition px-6 py-3 rounded-lg font-semibold shadow-lg">
               Start Learning Today
             </button>
           </div>
 
           {/* Optional image placeholder */}
-          <div className="hidden md:block">
+          <div className="md:block">
             <div className="bg-white/10 backdrop-blur rounded-2xl h-100 flex items-end justify-center border border-white/20">
               <Image
                 src="/founder.png"
@@ -86,7 +92,7 @@ export default function AboutPage() {
                 key={i}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition border border-gray-100 Poppins"
               >
-                <div className="w-10 h-10 bg-background/5 text-background rounded-lg flex items-center justify-center font-bold mb-4">
+                <div className="w-10 h-10 bg-primary text-foreground rounded-lg flex items-center justify-center font-bold mb-4">
                   ✓
                 </div>
                 <p className="text-sm font-medium text-gray-700 Poppins">{item}</p>

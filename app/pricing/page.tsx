@@ -55,13 +55,13 @@ export default function PricingPage() {
 
       {/* ================= WHY THIS COURSE ================= */}
       <section className="max-w-4xl mx-auto px-6 py-20">
-        <div className="flex justify-center items-center flex-col bg-white rounded-2xl shadow-md p-8 md:p-10">
+        <div className="bg-white rounded-2xl shadow-md p-8 md:p-10">
 
           <h3 className="text-2xl font-bold text-center mb-8 PoppinBold">
             WHY THIS COURSE?
           </h3>
 
-          <ul className="w-auto max-w-sm  space-y-3 text-gray-700 list-disc list-inside text-lg Poppins">
+          <ul className=" space-y-3 text-gray-700 list-disc list-inside text-lg Poppins">
             <li>Business Structures</li>
             <li>GST Treatment</li>
             <li>BAS Preparation</li>

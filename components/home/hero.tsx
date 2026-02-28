@@ -1,6 +1,9 @@
+"use client"
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Button } from "../ui/button";
+
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +36,46 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 }
 
 export default function Home() {
+  const [enrollEmail, setEnrollEmail] = useState<string>("");
+  const [enrollLoading, setEnrollLoading] = useState<boolean>(false);
+  const router = useRouter();
+  const handleEnroll = async () => {
+    if (!enrollEmail) {
+      alert("Please enter your email");
+      return;
+    }
+
+    setEnrollLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: "Enroll",
+          lastName: "User",
+          email: enrollEmail,
+          phone: "Not provided",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Enrollment successful!");
+        setEnrollEmail("");
+      } else {
+        alert("Failed to submit.");
+      }
+    } catch (error) {
+      alert("Something went wrong.");
+    }
+
+    setEnrollLoading(false);
+  };
+
   return (
     <main className="w-full overflow-x-hidden bg-[#f4f6f8] text-[#0b2540] Poppins">
       {/* ================= HERO ================= */}
@@ -57,9 +100,12 @@ export default function Home() {
               </span>
             </p>
 
-            <button className="mt-8 bg-white text-[#0e2a47] px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition">
+            <Button
+              onClick={() => router.push("/contact")}
+              className="mt-8 bg-white text-[#0e2a47] px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition"
+            >
               Get in touch
-            </button>
+            </Button>
           </div>
 
           {/* Right Map */}
@@ -201,47 +247,44 @@ export default function Home() {
       </section>
 
       {/* ================= WHAT YOU'LL LEARN ================= */}
-<section className="max-w-7xl mx-auto px-6 pb-24">
-  <div className="bg-gradient-to-br from-[#0e2a47] to-[#123a63] text-white rounded-3xl p-12 shadow-xl">
-
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-        What You’ll Learn
-      </h2>
-      <p className="text-white/70 mt-3 max-w-2xl mx-auto">
-        A complete step-by-step practical system to understand and manage
-        Australian bookkeeping with confidence.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      {[
-        "Introduction to Australian Business Structures",
-        "GST & BAS Fundamentals",
-        "Complex Xero Overview + Chart of Accounts",
-        "Payroll & STP",
-        "BAS Preparation",
-        "Practical workflow explained step-by-step",
-      ].map((item, index) => (
-        <div
-          key={index}
-          className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-[1.02]"
-        >
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-sm font-semibold">
-              {index + 1}
-            </div>
-            <p className="text-white/90 text-sm md:text-base leading-relaxed">
-              {item}
+      <section className="max-w-7xl mx-auto px-6 pb-24">
+        <div className="bg-gradient-to-br from-[#0e2a47] to-[#123a63] text-white rounded-3xl p-12 shadow-xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              What You’ll Learn
+            </h2>
+            <p className="text-white/70 mt-3 max-w-2xl mx-auto">
+              A complete step-by-step practical system to understand and manage
+              Australian bookkeeping with confidence.
             </p>
           </div>
-        </div>
-      ))}
 
-    </div>
-  </div>
-</section>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "Introduction to Australian Business Structures",
+              "GST & BAS Fundamentals",
+              "Complex Xero Overview + Chart of Accounts",
+              "Payroll & STP",
+              "BAS Preparation",
+              "Practical workflow explained step-by-step",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-[1.02]"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-sm font-semibold">
+                    {index + 1}
+                  </div>
+                  <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                    {item}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* ================= FAQ ================= */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-28">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -292,11 +335,19 @@ export default function Home() {
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <input
               type="email"
+              value={enrollEmail}
+              onChange={(e) => setEnrollEmail(e.target.value)}
               placeholder="Enter Email"
+              required
               className="px-5 py-3 rounded-md text-foreground bg-foreground/25 w-full sm:w-80"
             />
-            <button className="bg-white text-[#0e2a47] px-6 py-3 rounded-md font-semibold">
-              Enroll Now →
+
+            <button
+              onClick={handleEnroll}
+              disabled={enrollLoading}
+              className="bg-white text-[#0e2a47] px-6 py-3 rounded-md font-semibold"
+            >
+              {enrollLoading ? "Sending..." : "Enroll Now →"}
             </button>
           </div>
         </div>

@@ -37,7 +37,7 @@ export default function NavBar() {
               <Image
                 src="/logo.png"
                 alt="Logo"
-                width={100}
+                width={70}
                 height={50}
                 className="cursor-pointer"
               />
@@ -81,7 +81,7 @@ export default function NavBar() {
           isOpen ? "h-[100vh] opacity-100" : "h-[0vh] opacity-0"
         }`}
       >
-        <div className="relative flex flex-col justify-start items-start bg-background border-t p-4 h-[84vh] w-[100vw] space-y-4">
+        <div className="relative flex flex-col justify-start items-start bg-primary border-t p-4 h-[84vh] w-[100vw] space-y-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -93,8 +93,8 @@ export default function NavBar() {
             </Link>
           ))}
           <div className="absolute flex flex-col justify-center items-center bottom-[0px] p-0 m-0 w-[95%] h-auto">
-            <Link href="/wa.me/6352644993" className="flex justify-center items-center w-full">
-              <Button className="w-[90%] bg-primary text-background py-7 text-2xl rounded-full PoppinBold uppercase">
+            <Link href="https://wa.me/6352644993" className="flex justify-center items-center w-full">
+              <Button className="w-[90%] bg-white text-background py-7 text-2xl rounded-full PoppinBold uppercase">
                 Let’s Talk
               </Button>
             </Link>
