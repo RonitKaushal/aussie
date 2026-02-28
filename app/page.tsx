@@ -7,7 +7,7 @@ import Hero from "@/components/home/hero";
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start bg-primary">
+    <main className="flex min-h-screen flex-col items-center justify-start bg-foreground">
       <Hero/>
     </main>
   );

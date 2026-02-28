@@ -1,69 +1,67 @@
-# ❄️ Arctic Base – Student-powered Web Development
+# 🇦🇺 The Aussie CA – Australian Accounting & Xero Training Platform
 
-Welcome to the official repository of [Arctic Base](https://arcticbase.tech) — a creative web agency run by students who build modern, fast, and affordable websites with zero corporate drama.  
-We don't have a physical office, but we do have real skills.
+Welcome to the official repository of **The Aussie CA** — a professional training platform designed to help Indian accounting students and professionals master **Australian GST, BAS, Payroll & Xero** through practical, job-ready learning.
+
+This platform delivers structured, CA-led training focused on real-world Australian accounting workflows.
 
 ---
 
 ## 🚀 Live Website
 
-👉 [Visit Arctic Base](https://arcticbase.tech)
+👉 https://theaussieca.com  
+*(Replace with your actual domain if different)*
 
 ---
 
 ## 🛠 Tech Stack
 
-- [Next.js](https://nextjs.org/) – React Framework with App Router  
-- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS Framework  
-- [TypeScript](https://www.typescriptlang.org/) – Type-safe JavaScript  
-- SEO Optimized with Next.js `metadata` API
+- **Next.js (App Router)** – React Framework  
+- **Tailwind CSS** – Utility-first CSS Framework  
+- **TypeScript** – Type-safe JavaScript  
+- **Lucide Icons** – Modern SVG Icons  
+- SEO optimized using Next.js `metadata` API  
+- Fully responsive & performance optimized  
 
 ---
 
-## 🧠 What We Do
+## 📘 Platform Features
 
-- Full-stack Web Development  
-- UI/UX Design  
-- AI / ML Solutions  
-- Marketing & Strategy  
-- Landing Pages, Portfolios, Dashboards, and more
+- Practical Australian Accounting Training  
+- GST & BAS Preparation  
+- Payroll & STP Compliance  
+- Xero Software Hands-on Training  
+- Real Industry Workflow Demonstrations  
+- Job-Oriented Curriculum  
+- Lifetime Support & Guidance  
 
-We offer high-quality services at student-friendly prices. Each team member focuses on their area of expertise — no "one person does everything" chaos here.
-
----
-
-## 🔍 SEO Optimized
+Designed to make professionals **client-ready for Australian firms and outsourcing companies.**
 
 ---
 
-## 🧪 How to Run Locally
+## 🎯 Target Audience
+
+- Indian accounting students  
+- CA / CMA / B.Com graduates  
+- Working professionals  
+- Freelancers serving Australian clients  
+- Anyone building a global accounting career  
+
+---
+
+## 🔍 SEO & Optimization
+
+- Metadata configured for course discoverability  
+- OpenGraph & Twitter preview integration  
+- Clean semantic structure  
+- Mobile-first design  
+- Fast loading performance  
+
+---
+
+## 🧪 Run Locally
 
 ```bash
-git clone https://github.com/your-username/arctic-base.git
-cd arctic-base
+git clone https://github.com/your-username/the-aussie-ca.git
+cd the-aussie-ca
 npm install
 npm run dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-## 🧊 Credits
-
-Built with ❤️ by Ronit Kaushal
-
----
-
-## 📨 Contact
-
-For inquiries, collaborations, or hiring us:
-
-📧 hello@arcticbase.tech  
-🌐 [arcticbase.tech](https://arcticbase.tech)
-
----
-
-## 📄 License
-
-MIT License. Feel free to fork, use, and contribute (and maybe hire us 😎).
