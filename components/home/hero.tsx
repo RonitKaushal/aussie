@@ -272,8 +272,8 @@ export default function Home() {
                 key={index}
                 className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-[1.02]"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-sm font-semibold">
+                <div className="flex justify-start items-center gap-4">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full text-sm font-semibold">
                     {index + 1}
                   </div>
                   <p className="text-white/90 text-sm md:text-base leading-relaxed">
@@ -333,21 +333,12 @@ export default function Home() {
           </h2>
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <input
-              type="email"
-              value={enrollEmail}
-              onChange={(e) => setEnrollEmail(e.target.value)}
-              placeholder="Enter Email"
-              required
-              className="px-5 py-3 rounded-md text-foreground bg-foreground/25 w-full sm:w-80"
-            />
 
             <button
-              onClick={handleEnroll}
-              disabled={enrollLoading}
+                          onClick={() => router.push("/contact")}
               className="bg-white text-[#0e2a47] px-6 py-3 rounded-md font-semibold"
             >
-              {enrollLoading ? "Sending..." : "Enroll Now →"}
+              Get in touch
             </button>
           </div>
         </div>

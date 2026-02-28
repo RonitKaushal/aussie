@@ -61,7 +61,7 @@ export default function PricingPage() {
             WHY THIS COURSE?
           </h3>
 
-          <ul className=" space-y-3 text-gray-700 list-disc list-inside text-lg Poppins">
+          <ul className=" space-y-3 text-gray-700 list-disc list-inside text-md Poppins">
             <li>Business Structures</li>
             <li>GST Treatment</li>
             <li>BAS Preparation</li>

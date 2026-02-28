@@ -90,12 +90,12 @@ export default function AboutPage() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition border border-gray-100 Poppins"
+                className="flex justify-start items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition border border-gray-100 Poppins"
               >
-                <div className="w-10 h-10 bg-primary text-foreground rounded-lg flex items-center justify-center font-bold mb-4">
+                <div className="w-10 h-10 bg-primary text-foreground rounded-lg flex items-center justify-center font-bold">
                   ✓
                 </div>
-                <p className="text-sm font-medium text-gray-700 Poppins">{item}</p>
+                <p className="w-[80%] text-sm font-medium text-gray-700 Poppins ml-2">{item}</p>
               </div>
             ))}
           </div>

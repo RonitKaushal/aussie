@@ -6,59 +6,67 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#0e2a47] text-white pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10 items-start">
+        {/* Main Container */}
+        <div className="flex flex-col items-center text-center 
+                        md:flex-row md:items-start md:justify-between md:text-left">
+
           {/* Logo Section */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="flex justify-center items-center">
-              <div className="relative flex justify-center items-center w-42 h-42">
-                <Image
-                  src="/logo.png"
-                  alt="Australia Map"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              </div>
+          <div className="space-y-4 md:w-1/3 flex md:block justify-center">
+            <div className="relative w-40 h-40">
+              <Image
+                src="/logo.png"
+                alt="Australia Map"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
 
-          {/* Navigation */}
-          <div className="space-y-3">
-            <h4 className="font-semibold mb-2 PoppinBold">Quick Links</h4>
-            <ul className="space-y-2 text-gray-300 Poppins">
-              <li>
-                <Link href="/" className="hover:text-white transition Poppins">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-white transition Poppins">
-                  About us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-white transition Poppins">
-                  Contact us
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="hover:text-white transition Poppins">
-                  Pricing
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Links + Contact Wrapper */}
+          <div className="flex flex-col items-center 
+                          md:flex-row md:items-start md:gap-20 md:w-2/3 mt-8 md:mt-0">
 
-          {/* Contact Info */}
-          <div className="space-y-3">
-            <h4 className="font-semibold mb-2 PoppinBold">Contact</h4>
-            <p className="text-gray-300 Poppins">Email: theaussieca@gmail.com</p>
-            <p className="text-gray-300 Poppins">Phone no: 6352644993</p>
+            {/* Navigation */}
+            <div className="space-y-3 mt-5 md:mt-0">
+              <h4 className="font-semibold mb-2 PoppinBold">Quick Links</h4>
+              <ul className="space-y-2 text-gray-300 Poppins">
+                <li>
+                  <Link href="/" className="hover:text-white transition">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-white transition">
+                    About us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-white transition">
+                    Contact us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing" className="hover:text-white transition">
+                    Pricing
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-3 mt-8 md:mt-0">
+              <h4 className="font-semibold mb-2 PoppinBold">Contact</h4>
+              <p className="text-gray-300 Poppins">
+                Email: theaussieca@gmail.com
+              </p>
+              <p className="text-gray-300 Poppins">
+                Phone no: 6352644993
+              </p>
+            </div>
           </div>
 
           {/* Social */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex justify-center items-center flex-col mt-8 md:mt-0 md:items-end">
             <h4 className="font-semibold PoppinBold">Follow us on</h4>
 
             <div className="flex gap-4">
