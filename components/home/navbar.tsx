@@ -22,23 +22,22 @@ export default function NavBar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/About" },
-    { label: "Services", href: "/Services" },
-    { label: "Projects", href: "/Projects" },
-    { label: "Contact", href: "/Contact" },
+    { label: "About", href: "/about" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-background text-foreground border-b shadow-md transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-primary text-foreground border-b shadow-md transition-all duration-300">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-12">
+        <div className="flex justify-between items-center h-auto">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/Arctic_Base_logo.png"
+                src="/logo.png"
                 alt="Logo"
-                width={250}
+                width={100}
                 height={50}
                 className="cursor-pointer"
               />
@@ -51,14 +50,14 @@ export default function NavBar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg uppercase font-medium hover:text-primary transition-all duration-300"
+                className="text-lg uppercase font-medium PoppinMedium hover:text-foreground/50 transition-all duration-300"
               >
                 {link.label}
               </Link>
             ))}
 
-            <Link href="/Contact">
-              <Button className="bg-primary text-background px-6 py-2 text-lg rounded-full GeistBold uppercase">
+            <Link href="https://wa.me/6352644993">
+              <Button className="bg-foreground hover:bg-foreground/50 text-background px-6 py-2 text-lg rounded-full PoppinBold uppercase">
                 Let’s Talk
               </Button>
             </Link>
@@ -88,14 +87,14 @@ export default function NavBar() {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-3xl uppercase GeistMedium hover:text-primary transition-all duration-300"
+              className="text-3xl uppercase PoppinMedium hover:text-primary transition-all duration-300"
             >
               {link.label}
             </Link>
           ))}
           <div className="absolute flex flex-col justify-center items-center bottom-[0px] p-0 m-0 w-[95%] h-auto">
-            <Link href="/Contact" className="flex justify-center items-center w-full">
-              <Button className="w-[90%] bg-primary text-background py-7 text-2xl rounded-full GeistBold uppercase">
+            <Link href="/wa.me/6352644993" className="flex justify-center items-center w-full">
+              <Button className="w-[90%] bg-primary text-background py-7 text-2xl rounded-full PoppinBold uppercase">
                 Let’s Talk
               </Button>
             </Link>

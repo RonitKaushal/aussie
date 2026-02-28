@@ -1,97 +1,96 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Copy, Check } from "lucide-react";
-import { useState } from "react";
+import Link from "next/link";
+import { Facebook, Youtube, Instagram } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
-  const [copied, setCopied] = useState(false);
-  const email = "hello@arcticbase.tech";
-
-  const handleCopy = () => {
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(email).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      });
-    } else {
-      // Fallback method
-      const textarea = document.createElement("textarea");
-      textarea.value = email;
-      textarea.style.position = "fixed";
-      textarea.style.left = "-9999px";
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand("copy");
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      } catch (err) {
-        console.error("Fallback: Copy failed", err);
-      }
-      document.body.removeChild(textarea);
-    }
-  };
-
-  const socialLinks = [
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/arctic-base" },
-    { name: "Instagram", href: "https://www.instagram.com/arcticbase.tech" },
-    {
-      name: "Facebook",
-      href: "https://www.facebook.com/people/Arctic-Base/pfbid0vzkY6L8XPNzn8FCTx8LTNVWwsEebh7Jd2ACNUJs8X4L3vsFePHwbYwfsRtgug9Vjl/",
-    },
-    { name: "Behance", href: "https://www.behance.net/arcticbase" },
-    { name: "Dribbble", href: "https://dribbble.com/arcticbase-org" },
-    { name: "X", href: "https://x.com/arcticbase_tech" },
-  ];
-
   return (
-    <div className="relative flex flex-col w-full items-center justify-center bg-white/5">
-      <div className="relative flex flex-col items-center justify-center GeistMedium max-w-6xl w-[95%] mt-40">
-        <p className="text-4xl md:text-5xl w-[95%] max-w-3xl GeistBold text-center uppercase">
-          Have a project in mind? Let&rsquo;s get to work.
-        </p>{" "}
-        <p className="text-sm md:text-lg Geist w-[95%] max-w-xl mt-3 text-foreground/50 text-center">
-          Feel free to reach out if you want to collaborate with us, or simply
-          have a chat.
-        </p>
-        <div className="flex justify-center items-center w-full space-x-3 mt-10">
-          <a href={`mailto:${email}`}>
-            <Button className="bg-primary text-background p-7 text-xl rounded-full">
-              {email}
-            </Button>
-          </a>
-          <Button
-            onClick={handleCopy}
-            className="bg-background hover:bg-background cursor-pointer border border-primary text-foreground p-7 text-xl rounded-full"
-            size="icon"
-          >
-            {copied ? (
-              <Check className="w-5 h-5 text-green-500" />
-            ) : (
-              <Copy className="w-5 h-5" />
-            )}
-          </Button>
-        </div>
-      </div>
-      <div className="flex justify-center items-center mt-30 border-y w-full border-foreground">
-        <div className="w-full max-w-6xl h-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start w-[95%] h-auto text-3xl border-foreground uppercase transition-all duration-500 py-5">
-            {socialLinks.map((link) => (
+    <footer className="w-full bg-[#0e2a47] text-white pt-16 pb-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-4 gap-10 items-start">
+          {/* Logo Section */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="flex justify-center items-center">
+              <div className="relative flex justify-center items-center w-42 h-42">
+                <Image
+                  src="/logo.png"
+                  alt="Australia Map"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="space-y-3">
+            <h4 className="font-semibold mb-2 PoppinBold">Quick Links</h4>
+            <ul className="space-y-2 text-gray-300 Poppins">
+              <li>
+                <Link href="/" className="hover:text-white transition Poppins">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-white transition Poppins">
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition Poppins">
+                  Contact us
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="hover:text-white transition Poppins">
+                  Pricing
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-3">
+            <h4 className="font-semibold mb-2 PoppinBold">Contact</h4>
+            <p className="text-gray-300 Poppins">Email: theaussieca@gmail.com</p>
+            <p className="text-gray-300 Poppins">Phone no: 6352644993</p>
+          </div>
+
+          {/* Social */}
+          <div className="space-y-4">
+            <h4 className="font-semibold PoppinBold">Follow us on</h4>
+
+            <div className="flex gap-4">
               <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-start items-start p-0 GeistBold w-auto bg-transparents hover:text-primary cursor-pointer"
+                href="https://www.facebook.com/profile.php?id=61588053154014"
+                className="w-10 h-10 bg-[#1b3a5f] flex items-center justify-center rounded-lg hover:bg-[#244a76] transition"
               >
-                {link.name}
+                <Facebook size={18} />
               </a>
-            ))}
+
+              <a
+                href="https://www.youtube.com/@theaussieca"
+                className="w-10 h-10 bg-[#1b3a5f] flex items-center justify-center rounded-lg hover:bg-[#244a76] transition"
+              >
+                <Youtube size={18} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/theaussieca/"
+                className="w-10 h-10 bg-[#1b3a5f] flex items-center justify-center rounded-lg hover:bg-[#244a76] transition"
+              >
+                <Instagram size={18} />
+              </a>
+            </div>
           </div>
         </div>
-      </div>{" "}
-      <p>© ARCTICBASE 2025</p>
-    </div>
+
+        {/* Divider */}
+        <div className="border-t border-[#1f4068] mt-12 pt-6 text-center text-gray-400 text-sm Poppins">
+          © {new Date().getFullYear()} The Aussie CA. All rights reserved.
+        </div>
+      </div>
+    </footer>
   );
 }

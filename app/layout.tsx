@@ -20,60 +20,55 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "ArcticBase – Student Team for Web Development & Design",
+  title: "The Aussie CA – Master Australian Bookkeeping, GST & Xero",
   description:
-    "ArcticBase is a student-led team offering affordable, professional web development, design, and branding services. No hierarchy, just trust, teamwork, and great results.",
+    "Learn Australian GST, BAS, Payroll & Xero from a Chartered Accountant. Practical, job-ready training designed for Indian accounting professionals who want to work with Australian clients.",
   keywords: [
-    "Arctic Base",
-    "student developers",
-    "web development team",
-    "affordable design services",
-    "Next.js developers",
-    "UI UX student team",
-    "freelance student devs",
-    "affordable website design",
-    "branding services by students",
-    "creative student agency",
+    "Australian accounting course",
+    "GST BAS training",
+    "Xero training India",
+    "Australian bookkeeping course",
+    "Payroll STP training",
+    "BAS preparation course",
+    "CA Shalini Jain",
+    "Australian outsourcing accounting",
+    "Xero practical training",
+    "Accounting course for Indian professionals",
   ],
-  authors: [{ name: "Ronit Kaushal", url: "https://arcticbase.tech" }],
-  creator: "Ronit Kaushal",
+  authors: [{ name: "The Aussie CA" }],
+  creator: "The Aussie CA",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
-    other: [
-      {
-        rel: "icon",
-        url: "/favicon.png",
-        type: "image/svg+xml",
-      },
-    ],
   },
+  metadataBase: new URL("https://theaussieca.com"), // replace with actual domain
+
   openGraph: {
-    title: "ArcticBase – Student Team for Web Development & Design",
+    title: "The Aussie CA – Master Australian GST, BAS & Xero",
     description:
-      "We’re a group of passionate students building high-quality websites, branding, and UI/UX—without the agency price tag.",
-    url: "https://arcticbase.tech",
-    siteName: "ArcticBase",
+      "Become client-ready for Australian firms. Practical GST, BAS, Payroll & Xero training led by a Chartered Accountant.",
+    url: "https://theaussieca.com", // replace with actual domain
+    siteName: "The Aussie CA",
     images: [
       {
-        url: "https://arcticbase.tech/preview.jpg", // Replace with your image URL
+        url: "https://theaussieca.com/preview.jpg", // replace with your preview image
         width: 1200,
         height: 630,
-        alt: "ArcticBase Website Preview",
+        alt: "The Aussie CA – Australian Accounting Course",
       },
     ],
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "ArcticBase – Student Team for Web Development & Design",
+    title: "The Aussie CA – Australian Accounting & Xero Training",
     description:
-      "Affordable, high-quality web and design services by students. We create clean, fast, and modern websites with passion.",
-    images: ["https://arcticbase.tech/preview.jpg"],
+      "Practical GST, BAS, Payroll & Xero training designed for Indian professionals working with Australian clients.",
+    images: ["https://theaussieca.com/preview.jpg"],
   },
-  metadataBase: new URL("https://arcticbase.tech"),
 };
 
  
@@ -89,7 +84,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

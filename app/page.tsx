@@ -11,12 +11,8 @@ import Testimony from "@/components/home/testimony";
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start">
-      <Hero />
-      <About />
-      <Services />
-      <ChooseUs />
-      <Testimony />
+    <main className="flex min-h-screen flex-col items-center justify-start bg-primary">
+      <Hero/>
     </main>
   );
 }

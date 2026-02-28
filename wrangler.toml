@@ -1,6 +1,6 @@
 "$schema" = "./node_modules/wrangler/config-schema.json"
 main = ".open-next/worker.js"
-name = "Arcticbase"
+name = "Aussica"
 # Set this to today's date
 compatibility_date = "2026-02-23"
 compatibility_flags = [ "nodejs_compat" ]

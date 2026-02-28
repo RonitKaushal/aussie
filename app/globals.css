@@ -93,7 +93,7 @@
   --card-foreground: #f0f0f0;
   --popover: #1a1a1a;
   --popover-foreground: #f0f0f0;
-  --primary: #eac5ff;
+  --primary: #0C2748;
   --primary-foreground: #000000;
   --secondary: #330000;
   --secondary-foreground: #ffcccc;
@@ -203,21 +203,21 @@
 
 /* ///////////////////////////////// */
 .PoppinBold {
-  font-family: 'PoppinBold', sans-serif;
+  font-family: 'Poppins-Bold', 'Poppins', sans-serif;
 }
 
 @font-face {
-  font-family: 'PoppinBold';
+  font-family: 'Poppins-Bold';
   src: url('/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 
 /* ////////////////////////////////////// */
 .PoppinMedium {
-  font-family: 'PoppinMediam', sans-serif;
+  font-family: 'Poppins-Medium', 'Poppins', sans-serif;
 }
 
 @font-face {
-  font-family: 'PoppinMediam';
+  font-family: 'Poppins-Medium';
   src: url('/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
