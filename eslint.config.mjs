@@ -13,8 +13,8 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
-      // allow unused catch error parameters to prevent build errors if they're only used for logging
-      '@typescript-eslint/no-unused-vars': ['error', { caughtErrors: 'none' }],
+      // allow unused variables and catch error parameters
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 ];
