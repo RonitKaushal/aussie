@@ -82,7 +82,7 @@ export default function Home() {
           <div className="px-6 sm:px-10 lg:px-16 py-12 sm:py-16">
             {/* Heading Section */}
             <div className="flex justify-center items-center flex-col text-center max-w-5xl mx-auto">
-              <p className="text-4xl uppercase tracking-widest text-primary PoppinBold">
+              <p className="text-4xl uppercase tracking-widest text-background PoppinBold">
                 About the Trainer
               </p>
 
