@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Dot } from "lucide-react";
 
 export default function AboutPage() {
     const router = useRouter();
@@ -102,37 +103,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ───────────────── WHO IT'S FOR ───────────────── */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14">
+{/* ───────────────── WHO IT'S FOR ───────────────── */}
+<section className="py-24 px-6 bg-white">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16">
 
-          <div>
-            <h3 className="text-2xl font-bold text-[#1a2e4a] mb-6 PoppinBold">
-              Designed For
-            </h3>
+    {/* LEFT SIDE */}
+    <div className="flex-1">
+      <h3 className="text-3xl font-bold text-[#1a2e4a] mb-10 PoppinBold">
+        Designed For
+      </h3>
 
-            <ul className="space-y-4 text-gray-700 Poppins">
-              <li>• Commerce Students</li>
-              <li>• CA / CMA / B.Com Graduates</li>
-              <li>• Freshers seeking global opportunities</li>
-              <li>• Accountants wanting international exposure</li>
-            </ul>
-          </div>
+      <ul className="space-y-6 text-gray-700 Poppins">
+        {[
+          "Commerce Students",
+          "CA / CMA / B.Com Graduates",
+          "Freshers seeking global opportunities",
+          "Accountants wanting international exposure",
+        ].map((item, index) => (
+          <li
+            key={index}
+            className="flex items-start gap-4 group transition-all duration-300"
+          >
+            <div className="mt-1 shrink-0">
+              <Dot />
+            </div>
 
-          <div className="bg-[#1a2e4a] text-white p-10 rounded-2xl shadow-lg">
-            <h3 className="text-2xl font-bold mb-4 PoppinBold">My Goal</h3>
-            <p className="text-gray-300 mb-4 leading-relaxed Poppins">
-              To make you confident, practical, and globally employable
-              in Australian accounting.
+            <p className="text-base md:text-lg leading-relaxed group-hover:text-black transition-colors duration-300">
+              {item}
             </p>
-            <p className="font-semibold PoppinMedium">
-              If you’re serious about building a career beyond borders,
-              you’re in the right place.
-            </p>
-          </div>
+          </li>
+        ))}
+      </ul>
+    </div>
 
-        </div>
-      </section>
+    {/* RIGHT SIDE */}
+    <div className="flex-1 bg-[#1a2e4a] text-white p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+
+      {/* subtle background glow */}
+      <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+
+      <h3 className="text-3xl font-bold mb-6 PoppinBold relative z-10">
+        My Goal
+      </h3>
+
+      <p className="text-gray-300 mb-6 leading-relaxed text-lg Poppins relative z-10">
+        To make you confident, practical, and globally employable
+        in Australian accounting.
+      </p>
+
+      <p className="font-semibold text-lg PoppinMedium relative z-10">
+        If you’re serious about building a career beyond borders,
+        you’re in the right place.
+      </p>
+    </div>
+
+  </div>
+</section>
 
 
 

@@ -159,19 +159,7 @@ export default function ContactPage() {
       </section>
 
       {/* ================= CONTACT INFO STRIP ================= */}
-      <section className="w-full bg-[#081c34] text-white mt-20 py-16">
-        <div className="flex justify-between items-center max-w-3xl mx-auto px-6 text-center md:text-left">
-          <div>
-            <h3 className="text-lg font-semibold mb-4 PoppinBold">Contact us</h3>
-            <p className="text-gray-300 Poppins">+91 63526 44993</p>
-          </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4 PoppinBold">Email us now</h3>
-            <p className="text-gray-300 Poppins">theaussieca@gmail.com</p>
-          </div>
-        </div>
-      </section>
 
     </main>
   );

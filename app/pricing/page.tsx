@@ -1,5 +1,6 @@
 "use client";
 
+import { Dot } from "lucide-react";
 import React from "react";
 
 export default function PricingPage() {
@@ -53,24 +54,41 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ================= WHY THIS COURSE ================= */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <div className="bg-white rounded-2xl shadow-md p-8 md:p-10">
+{/* ================= WHY THIS COURSE ================= */}
+<section className="py-24 px-6 bg-gray-50">
+  <div className="max-w-4xl mx-auto">
+    <div className="bg-white rounded-3xl shadow-xl p-10 md:p-14">
 
-          <h3 className="text-2xl font-bold text-center mb-8 PoppinBold">
-            WHY THIS COURSE?
-          </h3>
+      <h3 className="text-3xl font-bold text-center text-[#1a2e4a] mb-12 PoppinBold">
+        Why This Course?
+      </h3>
 
-          <ul className=" space-y-3 text-gray-700 list-disc list-inside text-md Poppins">
-            <li>Business Structures</li>
-            <li>GST Treatment</li>
-            <li>BAS Preparation</li>
-            <li>Payroll & STP Compliance</li>
-            <li>Real Xero System Handling</li>
-          </ul>
+      <ul className="space-y-6 text-gray-700 text-base md:text-lg Poppins max-w-2xl mx-auto">
+        {[
+          "Business Structures",
+          "GST Treatment",
+          "BAS Preparation",
+          "Payroll & STP Compliance",
+          "Real Xero System Handling",
+        ].map((item, index) => (
+          <li
+            key={index}
+            className="flex items-start gap-4 group transition-all duration-300"
+          >
+            <div className="mt-2 flex-shrink-0">
+              <Dot />
+            </div>
 
-        </div>
-      </section>
+            <p className="leading-relaxed group-hover:text-black transition-colors duration-300">
+              {item}
+            </p>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  </div>
+</section>
 
     </main>
   );

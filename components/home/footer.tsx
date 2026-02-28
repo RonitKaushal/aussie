@@ -7,9 +7,10 @@ export default function Footer() {
     <footer className="w-full bg-[#0e2a47] text-white pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6">
         {/* Main Container */}
-        <div className="flex flex-col items-center text-center 
-                        md:flex-row md:items-start md:justify-between md:text-left">
-
+        <div
+          className="flex flex-col items-center text-center 
+                        md:flex-row md:items-start md:justify-between md:text-left"
+        >
           {/* Logo Section */}
           <div className="space-y-4 md:w-1/3 flex md:block justify-center">
             <div className="relative w-40 h-40">
@@ -23,9 +24,10 @@ export default function Footer() {
           </div>
 
           {/* Links + Contact Wrapper */}
-          <div className="flex flex-col items-center 
-                          md:flex-row md:items-start md:gap-20 md:w-2/3 mt-8 md:mt-0">
-
+          <div
+            className="flex flex-col items-center 
+                          md:flex-row md:items-start md:gap-20 md:w-2/3 mt-8 md:mt-0"
+          >
             {/* Navigation */}
             <div className="space-y-3 mt-5 md:mt-0">
               <h4 className="font-semibold mb-2 PoppinBold">Quick Links</h4>
@@ -41,13 +43,17 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+               
+                    <Link
+                      href="/pricing"
+                      className="hover:text-white transition"
+                    >
+                      Pricing
+                    </Link>
+                  </li>
+                  <li>
                   <Link href="/contact" className="hover:text-white transition">
                     Contact us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="hover:text-white transition">
-                    Pricing
                   </Link>
                 </li>
               </ul>
@@ -59,9 +65,7 @@ export default function Footer() {
               <p className="text-gray-300 Poppins">
                 Email: theaussieca@gmail.com
               </p>
-              <p className="text-gray-300 Poppins">
-                Phone no: 6352644993
-              </p>
+              <p className="text-gray-300 Poppins">Phone no: 6352644993</p>
             </div>
           </div>
 

@@ -22,9 +22,9 @@ export default function NavBar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+    { label: "About us", href: "/about" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact us", href: "/contact" },
   ];
 
   return (
@@ -87,7 +87,7 @@ export default function NavBar() {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-3xl uppercase PoppinMedium hover:text-primary transition-all duration-300"
+              className="text-xl uppercase PoppinMedium hover:text-primary transition-all duration-300"
             >
               {link.label}
             </Link>

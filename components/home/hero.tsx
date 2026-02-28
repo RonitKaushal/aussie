@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import { Dot } from "lucide-react";
 
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -176,30 +177,53 @@ export default function Home() {
           The Advantage of Choosing This Course?
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10 text-gray-700">
-          <ul className="space-y-4 list-disc list-inside">
-            <li>Learn practical Australian accounting, not just theory</li>
-            <li>Designed specifically for Indian students and professionals</li>
-            <li>
-              Based on 10+ years of direct experience with Australian clients
-            </li>
-            <li>
-              Step-by-step training on real compliance work (GST, BAS, Payroll,
-              Div 7A)
-            </li>
-            <li>Hands-on exposure to Xero software</li>
-          </ul>
-
-          <ul className="space-y-4 list-disc list-inside">
-            <li>
-              Job-oriented curriculum focused on real industry requirements
-            </li>
-            <li>Learn how Australian outsourcing firms actually work</li>
-            <li>Lifetime support even after course completion</li>
-            <li>Regular updates on law amendments</li>
-            <li>Clear roadmap to build a global accounting career</li>
-          </ul>
+<div className="grid md:grid-cols-2 gap-12 text-gray-700">
+  {/* Column 1 */}
+  <ul className="space-y-5">
+    {[
+      "Learn practical Australian accounting, not just theory",
+      "Designed specifically for Indian students and professionals",
+      "Based on 10+ years of direct experience with Australian clients",
+      "Step-by-step training on real compliance work (GST, BAS, Payroll, Div 7A)",
+      "Hands-on exposure to Xero software",
+    ].map((item, index) => (
+      <li
+        key={index}
+        className="flex items-start gap-4 group transition-all duration-300"
+      >
+        <div className="mt-1 flex-shrink-0">
+          <Dot />
         </div>
+        <p className="leading-relaxed group-hover:text-black transition-colors duration-300">
+          {item}
+        </p>
+      </li>
+    ))}
+  </ul>
+
+  {/* Column 2 */}
+  <ul className="space-y-5">
+    {[
+      "Job-oriented curriculum focused on real industry requirements",
+      "Learn how Australian outsourcing firms actually work",
+      "Lifetime support even after course completion",
+      "Regular updates on law amendments",
+      "Clear roadmap to build a global accounting career",
+    ].map((item, index) => (
+      <li
+        key={index}
+        className="flex items-start gap-4 group transition-all duration-300"
+      >
+        <div className="mt-1 flex-shrink-0">
+          <Dot />
+        </div>
+        <p className="leading-relaxed group-hover:text-black transition-colors duration-300">
+          {item}
+        </p>
+      </li>
+    ))}
+  </ul>
+</div>
       </section>
 
       {/* ================= 3 STEP CAREER SECTION ================= */}
@@ -272,11 +296,11 @@ export default function Home() {
                 key={index}
                 className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-[1.02]"
               >
-                <div className="flex justify-start items-center gap-4">
+                <div className="flex justify-start items-center">
                   <div className="w-10 h-10 flex items-center justify-center rounded-full text-sm font-semibold">
                     {index + 1}
                   </div>
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                  <p className="text-white/90 text-sm md:text-base leading-relaxed w-full ml-2">
                     {item}
                   </p>
                 </div>
